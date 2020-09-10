@@ -6,13 +6,32 @@ Must-have features
     Have a reset button
  */
 
-let rock = document.getElementById("rock").onclick = playGame;
-let scissors = document.getElementById("scissors").onclick = playGame;
-let paper = document.getElementById("paper").onclick =playGame;
 
-function playGame (){
+document.getElementById("rock").addEventListener("click",()=>{
+    userChoice = 'rock';
+    playGame();
+})
 
-    let userChoice = this.id;
+document.getElementById("scissors").addEventListener("click", ()=>{
+    userChoice = 'scissors';
+    playGame();
+})
+
+document.getElementById("paper").addEventListener("click", ()=>{
+    userChoice = 'paper';
+    playGame();
+})
+
+
+//document.getElementById("play").addEventListener("click", ()=>{
+//created function playGame below and called it above,
+//so user does not have to press play to see the result (result appears immediately)
+
+//should addEventListener to edit style when image is clicked
+//should add reset for counting the score
+
+function playGame(){
+
     let computerChoice = Math.random();
 
     if (computerChoice < 0.34){
@@ -25,45 +44,44 @@ function playGame (){
         computerChoice = 'paper';
     }
 
+    console.log(computerChoice);
 
-    let result = compare();
-    document.getElementById("result").innerHTML = `${result}`
+    if (userChoice === computerChoice){
+        document.getElementById("result").innerHTML = "tie";
+    }
+    else if (userChoice === 'rock'){
 
-    function compare (){
-        if (userChoice === computerChoice){
-            return "tie";
+        if (computerChoice === 'scissors'){
+            document.getElementById("result").innerHTML = "you win";
         }
-        else if (userChoice === 'rock'){
-
-            if (computerChoice === 'scissors'){
-                return "you win";
-            }
-            else if (computerChoice === 'paper'){
-                return "you lose";
-            }
-        }
-
-        else if (userChoice === 'scissors'){
-            if (computerChoice === 'rock'){
-                return "you lose";
-            }
-            else if (computerChoice === 'paper'){
-                return "you win";
-            }
-
-        }
-
-        else if (userChoice === 'paper'){
-            if (computerChoice === 'rock'){
-                return "you win";
-            }
-
-            else if (computerChoice === 'scissors'){
-                return "you lose";
-
-            }
+        else if (computerChoice === 'paper'){
+            document.getElementById("result").innerHTML = "you lose";
         }
     }
+
+    else if (userChoice === 'scissors'){
+        if (computerChoice === 'rock'){
+            document.getElementById("result").innerHTML = "you lose";
+        }
+        else if (computerChoice === 'paper'){
+            document.getElementById("result").innerHTML = "you win";
+        }
+
+    }
+
+    else if (userChoice === 'paper'){
+        if (computerChoice === 'rock'){
+            document.getElementById("result").innerHTML = "you win";
+        }
+
+        else if (computerChoice === 'scissors'){
+            document.getElementById("result").innerHTML ="you lose";
+
+        }
+    }
+
 }
 
+document.getElementById("reset").addEventListener("click", ()=>{
 
+})
