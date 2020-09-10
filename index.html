@@ -23,51 +23,40 @@ Let the player know they won (no alert box)
 Have a reset button
 -->
 
-<h1> ROCK SCISSORS PAPER </h1>
+<h1 class ="text-center"> ROCK SCISSORS PAPER </h1>
 
 <div class="container bg-info">
 
     <div class="row">
 
         <div class="col-sm p-3 d-inline-block">
-
             <div class="card">
                 <div class="card-body center-block">
-                    <img src="rock.png" class="img-responsive center-block d-block mx-auto " alt="Responsive image">
-
                     <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                        ROCK
+                        <img src="rock.png" id="rock" class="img-responsive center-block d-block mx-auto " alt="Responsive image">
                     </button>
-
                 </div>
             </div>
-
         </div>
-        <div class="col-sm p-3 d-inline-block">
 
+        <div class="col-sm p-3 d-inline-block">
             <div class="card">
                 <div class="card-body">
-                    <img src="scissors.png" class="img-responsive center-block d-block mx-auto" alt="Responsive image">
-
                     <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                       SCISSORS
+                        <img src="scissors.png" id="scissors" class="img-responsive center-block d-block mx-auto" alt="Responsive image">
                     </button>
                 </div>
             </div>
-
         </div>
-        <div class="col-sm p-3 d-inline-block">
 
+        <div class="col-sm p-3 d-inline-block">
             <div class="card">
                 <div class="card-body">
-                    <img src="paper.png" class="img-responsive center-block d-block mx-auto" alt="Responsive image">
-
                     <button type="button" class="btn" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                        PAPER
+                        <img src="paper.png" id="paper" class="img-responsive center-block d-block mx-auto" alt="Responsive image">
                     </button>
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -75,15 +64,13 @@ Have a reset button
 </div>
 
 <section class ="text-center my-2">
-    <button id="ted" class="btn">PLAY </button>
+    <button id="play" class="btn">PLAY </button>
 </section>
 
 
 <section class="text-center mt-2">
-    <h2> YOU WIN </h2>
-
+    <h2 id="result"> YOU WIN </h2>
 </section>
-
 
 
 <section class ="text-center my-2">
