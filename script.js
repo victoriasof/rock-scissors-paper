@@ -57,7 +57,6 @@ document.getElementById("reset").addEventListener("click", ()=>{
 
 })
 
-
 function playGame(){
 
     let computerChoice = Math.random();
